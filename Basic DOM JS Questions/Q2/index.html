@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+    <style>
+
+        body{
+            width: 100%;
+            height: 100%;
+        }
+
+        img{
+            height: 40vh;
+            width: 40vw;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <img id="img1" src="https://plus.unsplash.com/premium_photo-1683910767532-3a25b821f7ae?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D" alt="">
+    <img id="img2" src="https://images.unsplash.com/photo-1706694442016-bd539e1d102b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D" alt="">
+    <button id="btn">Click to Change Images!</button>
+
+    <script>
+
+        var img1=document.querySelector('#img1')
+        var img2=document.querySelector('#img2')
+        var btn=document.querySelector('#btn')
+
+        btn.addEventListener('click',()=>{
+            var temp=img1.src;
+            img1.src=img2.src;
+            img2.src=temp;
+            
+        })
+
+
+    </script>
+
+
+</body>
+</html>

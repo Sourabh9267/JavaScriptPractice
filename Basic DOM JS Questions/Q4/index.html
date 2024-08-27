@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Add or Remove a li tag in ul as per user input and choice -->
+    <ul>
+
+
+    </ul>
+    <input type="text" placeholder="Enter Item name" required id="inp">
+    <button id="add">
+        ADD
+    </button>
+    <button id="rem">
+        REMOVE
+    </button>
+
+    <script>
+
+        var inp=document.querySelector('#inp')
+        var add=document.querySelector('#add')
+        var rem=document.querySelector('#rem')
+        var ul=document.querySelector('ul')
+        var li;
+        add.addEventListener("click",()=>{
+
+            if(inp.value.trim()==='')
+            {
+
+            }else{
+                li=document.createElement('li')
+                li.textContent=inp.value;
+                ul.appendChild(li)
+                console.log(li);
+                inp.value=""
+                
+            }
+        })
+
+        rem.addEventListener('click',()=>{
+            ul.removeChild(li)
+        })
+
+
+
+    </script>
+
+
+</body>
+</html>

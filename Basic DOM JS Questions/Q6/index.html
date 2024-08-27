@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 6</title>
+
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #tabs{
+            display: flex;
+            gap: 2vh;
+            padding: 2vh;
+        }
+
+        .tab{
+            padding: 2vh;
+            background-color: aqua;
+            border: 2px solid red;
+            border-radius: 0.5vh;
+            font-family: 'gilroy';
+        }
+
+        h3{
+            display: none;
+            margin-top: 2vh;
+            width: 50%;
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- show content when tab is clicked -->
+
+    <div id="tabs">
+        <div id="home" class="tab">Home</div>
+        <div id="about" class="tab">About</div>
+        <div id="contact" class="tab">Contact</div>
+    </div>
+    <h3 id="hometext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, officiis ea aut perferendis, sed iure blanditiis itaque vero, ullam dicta reiciendis? Corrupti officia quibusdam eum rem ab, itaque vero eligendi accusantium nesciunt! Voluptatibus vitae saepe exercitationem sint quas beatae magni magnam nam quis esse veritatis facilis, velit recusandae debitis tempore.</h3>
+    <h3 id="abouttext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos deserunt vitae possimus quod expedita dolore vero exercitationem fugiat tempore. Sint asperiores velit natus sequi est ad blanditiis quasi quibusdam culpa magnam, totam sit repellat modi veniam expedita, quisquam distinctio ipsum facilis beatae impedit ex obcaecati cupiditate? Nam obcaecati minus, temporibus, excepturi quasi debitis exercitationem magni veritatis adipisci, laborum quibusdam explicabo iusto natus dolorem non qui modi voluptates maxime? Dolores at alias repudiandae doloribus, minima, atque odit error ipsam, sed eligendi nemo libero quia perferendis iusto recusandae! Laudantium nostrum odio nobis ab voluptate repellat. Aliquam quam eaque illum incidunt veniam.</h3>
+    <h3 id="contacttext">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim doloremque repellat labore officiis eligendi consequatur, laborum sapiente necessitatibus fugit est quasi itaque explicabo repudiandae! Modi molestiae tenetur quaerat excepturi in sint dicta. Eum corporis perferendis facere quia unde blanditiis ab ea, eius quo, inventore temporibus minima, amet dolor quos? Ex non, aliquid iure quis eius facilis veniam earum. Autem magnam itaque vitae fugit eum dignissimos vel deserunt eius molestiae consectetur, nostrum corporis dolore provident animi beatae tenetur laborum fugiat totam culpa aliquam. Accusantium, assumenda libero! Similique delectus veniam, sequi voluptas culpa nobis ex eaque excepturi voluptatum nesciunt, porro optio! Quae nisi aperiam veniam vel adipisci non soluta enim, modi iure obcaecati nesciunt totam aliquid facilis incidunt eos repudiandae nobis dolores. Ab, optio ut? Earum suscipit doloremque totam, repellat eos accusamus laudantium accusantium molestias est reiciendis quia facere animi eligendi molestiae sint ratione quod quibusdam inventore laborum ut dolorem incidunt ex nemo quis. Iste iure dicta nulla ab vel facilis eum distinctio vero cumque qui odit illum similique non dolorum dignissimos natus maiores, sit repellendus, a aut blanditiis reiciendis. Esse eos necessitatibus repudiandae id, praesentium eveniet. Doloremque laudantium itaque vitae ratione in repellat quas, et fugiat quaerat quibusdam. Ut, voluptatem magnam!</h3>
+
+
+    <script>
+
+        var home=document.querySelector('#home')
+        var about=document.querySelector('#about')
+        var contact=document.querySelector('#contact')
+
+        var hometext=document.querySelector('#hometext')
+        var abouttext=document.querySelector('#abouttext')
+        var contacttext=document.querySelector('#contacttext')
+
+
+        home.addEventListener('click',()=>{
+            removeall();
+            hometext.style.display="block";
+            hometext.style.width="50%";
+
+        })
+
+        about.addEventListener('click',()=>{
+            removeall();
+         abouttext.style.display="block";
+         abouttext.style.width="50%";
+            
+           
+        })
+
+        contact.addEventListener('click',()=>{
+            removeall();
+            contacttext.style.display="block";
+            contacttext.style.width="50%";
+            
+           
+        })
+
+        function removeall(){
+            hometext.style.display="none";
+            abouttext.style.display="none";
+            contacttext.style.display="none";
+        }
+
+
+    </script>
+
+
+</body>
+</html>

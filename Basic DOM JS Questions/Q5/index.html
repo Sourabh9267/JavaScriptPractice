@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+</head>
+<body>
+    <!-- Creat a Timer with start and stop button with 1 sec  default time -->
+
+    <h3 id="h3">0</h3>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+    
+
+    <script>
+
+        var int;
+        var start=document.querySelector('#start')
+        var stop=document.querySelector('#stop')
+        var reset=document.querySelector('#reset')
+        var h3=document.querySelector('#h3')
+        var count=0;
+        var isClicked=true;
+        start.addEventListener('click',()=>{
+            if(isClicked)
+            {
+                isClicked=false;
+                
+                int=setInterval(()=>{
+                    
+                    h3.textContent=++count;
+                    
+                },1000);
+                
+            }
+
+        });
+
+        stop.addEventListener('click',()=>{
+
+            clearInterval(int);
+
+        });
+
+        reset.addEventListener('click',()=>{
+            h3.textContent=0;
+            isClicked=true;
+            count=0;
+            clearInterval(int);
+
+        });
+
+       
+
+
+    </script>
+</body>
+</html>

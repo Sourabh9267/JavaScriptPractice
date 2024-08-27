@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 9</title>
+
+
+    <style>
+    *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        #main
+        {
+            height: 100%;
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+
+        #tarea{
+            height: 20vh;
+            width: 40vh;
+        }
+
+    </style>
+
+
+</head>
+<body id="main">
+    <!-- count frequency of Character in a text area -->
+
+    <h3 id="h3">Chracter Count: 0 </h3>
+    <textarea name="" id="tarea">
+
+
+
+    </textarea>
+
+
+    <script>
+
+        var tarea=document.querySelector('#tarea')
+        var h3=document.querySelector("#h3")
+       
+        
+        tarea.addEventListener('input',()=>{
+            
+            h3.textContent="Character Count : "+tarea.value.length;
+            
+        })
+  
+        
+        
+        
+    </script>
+
+</body>
+</html>

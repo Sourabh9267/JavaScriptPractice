@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #downloadcap{
+            height: 10px;
+            width: 500px;
+            background-color: rgb(202, 202, 202);
+            border-radius: 1vh;
+        }
+        #progress{
+            transition: all ease 0.1s;
+            height: 10px;
+            width: 0%;
+            background-color: rgb(255, 54, 47);
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Create a Download progress bar with current status of download -->
+        <div id="downloadsection">
+
+            <h3 id="h3">Click to Download </h3>
+            <div id="downloadcap">
+                <div id="progress"></div>
+
+            </div>
+
+
+        </div>
+
+        <script>
+
+            var h3 = document.querySelector('#h3');
+            var prg=document.querySelector('#progress');
+            var count=0;
+            var freq=true;
+            h3.addEventListener('click',()=>{
+                if(freq===true)
+                {   
+                    h3.textContent='Download Started....'
+                    freq=false;
+                var interval=setInterval(function(){
+                    if(count===100)
+                    {   
+                        h3.textContent="Download Finished"
+                        clearInterval(interval);
+                        prg.style.backgroundColor = "blue";
+                        prg.style.borderRadius="1vh";
+                    }
+                    
+                    count++;
+                    prg.style.width=count+'%';
+                },100)  
+                
+                }
+            
+            })
+            
+            
+            
+
+
+        </script>
+
+</body>
+</html>

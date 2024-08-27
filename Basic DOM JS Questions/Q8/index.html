@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 8</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        #main
+        {
+            height: 100%;
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+
+
+        .container{
+            
+            padding: 15vw 17vw;
+        }
+
+        input{
+            width: 100%;
+            outline-color:royalblue ;
+            padding: 1vw;
+            font-weight: 600;
+            font-size: 3vh;
+            border: 1px solid #dadada;
+        }
+        input::placeholder{
+            font-weight: 400;
+            color: rgb(35, 35, 35);
+        }
+
+        .people{
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .person
+        {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+         
+
+        .img{
+
+            border-radius: 50%;
+            border: 2px solid #dadada;
+            width: 7vw;
+            height: 7vw;
+            overflow: hidden;
+        }
+
+        .img img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- Q.8 Filter Images by Search value from input -->
+    
+    <div id="main">
+        <div class="container">
+
+            <input type="text" name="" id="inp" placeholder="Search Here">
+            <div class="people">
+                
+                
+            </div>
+
+        </div>
+    
+    </div>
+
+    <script>
+
+        var input=document.querySelector("#inp")
+        var people=document.querySelector('.people');
+        var data=[
+        {
+            name:"Harsh",
+            src:"https://plus.unsplash.com/premium_photo-1683121771856-3c3964975777?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        
+        {
+            name:"Aman",
+            src:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        
+        {
+            name:"Vishal",
+            src:"https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        
+        {
+            name:"Vishakha",
+            src:"https://plus.unsplash.com/premium_photo-1683134080778-aaa686741d0a?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+        
+        
+    ]
+
+    var pers="";
+
+    
+    // 
+
+    input.addEventListener('input',function(){
+
+      var matched= data.filter(function(e){
+
+            return e.name.startsWith(input.value);
+        })
+        
+
+        var newuser="";
+        matched.forEach(function(elem){
+        newuser+=`<div class="person">
+                    <div class="img">
+                        <img src="${elem.src}" alt="">
+                    </div>
+                    <h4>${elem.name}</h4>
+                </div>`;
+    });
+
+    people.innerHTML=newuser;
+       
+    })
+
+    
+
+    
+    </script>
+
+</body>
+</html>
