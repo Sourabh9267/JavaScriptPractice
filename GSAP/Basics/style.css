@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    background-color: #dadada;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#box1{
+    background-color: crimson;
+    height: 20vw;
+    width: 20vw;
+
+}
+#box2{
+    background-color: royalblue;
+    height: 20vw;
+    width: 20vw;
+
+}
+#box3{
+    background-color: seagreen;
+    height: 20vw;
+    width: 20vw;
+
+}
