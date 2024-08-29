@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic ScrollTrigger Project</title>
+
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        
+    }
+    body{
+        /* background-image: url("https://i.redd.it/qcs621f5306c1.jpg");
+        background-position: center;
+        background-size: cover; */
+        overflow-x: hidden;
+      }
+      #page1{
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+      }
+
+      #page3{
+        height: 100%;
+        width: 200%;
+        background-color: rgb(54, 0, 0);
+      }
+
+      #page4{
+        height: 100%;
+        width: 100%;
+        background-color: black;
+      }
+
+      #page3 h1{
+        font-size: 42vw;
+        font-weight: 600;
+        color:#dadada;
+        text-wrap: nowrap;
+     
+      }
+      #page3img{
+        height: 100%;
+        width: 100%;
+        background-color: rgb(27, 27, 27);
+      }
+
+      #page3img img{
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 100%;
+          width: 0%;
+          object-fit: cover;
+          object-position: top;
+          
+      }
+
+      
+    </style>
+  </head>
+
+  <body>
+
+    
+    <div id="page1"></div>
+    <!-- <div id="page2img"></div>
+    <div id="page2"><h1>MICHAEL DE SANTA</h1></div> -->
+    <div id="page3"><h1>TREVOR PHILLIPHS</h1></div>
+    <div id="page3img"><img src="TREVOR.jpg" alt=""></div>
+    <div id="page4"></div>
+
+
+
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+        </script>
+        
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+        </script>
+
+        <script>
+        
+
+
+
+
+
+        gsap.to("#page3 h1",{
+
+            transform:"translateX(-170%)",
+            scrollTrigger:{
+                trigger:"#page3",
+                scroller:"body",
+                start:"top 0",
+                end:"top -100%",
+                scrub:5,
+                pin:true,
+
+
+            }
+
+
+        })
+
+
+        gsap.to("#page3img img",{
+
+            width:"100%",
+            scrollTrigger:{
+                markers:true,
+                start:"top 0%",
+                end:"top -100%",
+                trigger:"#page3img",
+                scroller:"body",
+                scrub:5,
+                pin:true
+
+
+            }
+
+        })
+
+
+
+        </script>
+  </body>
+</html>
