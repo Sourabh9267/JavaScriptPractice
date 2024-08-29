@@ -4,178 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic ScrollTrigger Project</title>
-
-    <style>
-      * {
-        margin: 0%;
-        padding: 0%;
-        color: beige;
-      }
-
-      @font-face {
-        font-family: 'GTA';
-        src: url(Fonts/pricedow.ttf);
-      }
-
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-        
-    }
-
-    #bgdiv{
-      z-index: -1;
-      height: 100%;
-      width: 100%;
-      background-color: transparent;
-      position: fixed;
-    }
-    #overlay{
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      opacity: 100%;
-      background: linear-gradient(-180deg,rgba(0, 0, 0, 0.584),rgba(0, 0, 0, 0.162));
-    }
-    #bgdiv>video{
-      
-      width: 100%; 
-      
-    }
-
-    body{
-        /* background-image: url("https://i.redd.it/qcs621f5306c1.jpg");
-        background-position: center;
-        background-size: cover; */
-        background-color: transparent;
-        overflow-x: hidden;
-      }
-      #page1{
-        height: 100%;
-        width: 100%;
-        
-        display: flex;
-        flex-direction: column;
-      }
-      #nav{
-        height: 15vh;
-        width: 100%;
-        font-family: "GTA";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #navpart1{
-        height: 100%;
-        width: 100%;
-        padding: 0vw 4vw;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      #navpart1 h4{
-        font-weight: 500;
-        letter-spacing: 0.2vh;
-        font-size: 4vw;
-        color: red;
-        -webkit-text-stroke: 1px beige;
-        
-      }
-      #navpart2{
-        height: 100%;
-        width: 100%;
-        
-        padding: 0vw 2vw;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      #navpart2 h3{
-
-        font-weight: 500;
-        letter-spacing: 0.2vh;
-        font-size: 3vw;
-        color: red;
-       -webkit-text-stroke: 1px beige;
-      }
-    #page1content
-    {
-      height: 100%;
-      width: 100%;
-      font-family: "GTA";
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #page1content #h201{
-      text-transform: uppercase;
-      font-size: 5vw;
-      letter-spacing: 0.5vh;
-      font-weight: 10;
-      margin-left:-40vw;
-    }
-    #page1content #h202{
-      text-transform: uppercase;
-      font-size: 5vw;
-      letter-spacing: 0.5vh;
-      font-weight: 10;
-      margin-left:40vw;
-    }
-
-    #page1content img{
-      height: 45%;
-      width: 20%;
-    
-      object-fit: contain;
-    }
-      #page3{
-        height: 100%;
-        width: 100%;
-       
-      }
-
-      #page4{
-        height: 100%;
-        width: 100%;
-        background-color: black;
-      }
-
-      #page3 h1{
-        letter-spacing: 4vh;
-        font-family: "GTA";
-        font-size: 42vw;
-        font-weight: 600;
-        color:#dadada;
-        text-wrap: nowrap;
-     
-      }
-      #page3img{
-        height: 100%;
-        width: 100%;
-
-      }
-
-      #page3img img{
-          position: relative;
-          left: 50%;
-          transform: translateX(-50%);
-          height: 100%;
-          width: 0%;
-          object-fit: cover;
-          object-position: top;
-          
-      }
-
-      
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-
+  
+      
+      <div id="scrolldown">SCROLL DOWN ⬇️</div>
+    
     <div id="bgdiv">
       <div id="overlay"></div>
       <video src="SRCVID.mp4" autoplay loop muted></video>
@@ -185,7 +21,8 @@
       <div id="nav">
 
         <div id="navpart1">
-          <h4>ROCKSTAR GAMES</h4>
+          <img src="rstar.png" alt="">
+          <h4> ROCKSTAR GAMES</h4>
 
         </div>
 
@@ -201,7 +38,7 @@
 
       <div id="page1content">
 
-        <h2 id="h201">Experiance </h2>  
+        <h2 id="h201">experience </h2>  
         <img src="logo.png" alt="">
         <h2 id="h202">Characters </h2> 
           
@@ -213,9 +50,13 @@
       </div>
     <!-- <div id="page2img"></div>
     <div id="page2"><h1>MICHAEL DE SANTA</h1></div> -->
-    <div id="page3"><h1>TREVOR PHILLIPHS</h1></div>
-    <div id="page3img"><img src="TREVOR.jpg" alt=""></div>
-    <div id="page4"></div>
+    <div id="page3"><h1>MICHAEL DE SANTA</h1></div>
+    <div id="page3img"><img src="MICHAEL.jpg" alt=""></div>
+    <div id="page4"><h1>TREVOR PHILLIPHS</h1></div>
+    <div id="page4img"><img src="TREVOR.jpg" alt=""></div>
+    <div id="page5"><h1>FRANKLIN CLINTON</h1></div>
+    <div id="page5img"><img src="FRANKLIN.jpg" alt=""></div>
+    
 
 
 
@@ -233,50 +74,6 @@
         referrerpolicy="no-referrer">
         </script>
 
-        <script>
-        
-
-
-
-
-
-        gsap.to("#page3 h1",{
-
-            transform:"translateX(-170%)",
-            scrollTrigger:{
-                trigger:"#page3",
-                scroller:"body",
-                start:"top 0",
-                end:"top -100%",
-                scrub:5,
-                pin:true,
-
-
-            }
-
-
-        })
-
-
-        gsap.to("#page3img img",{
-
-            width:"100%",
-            scrollTrigger:{
-                markers:true,
-                start:"top 0%",
-                end:"top -100%",
-                trigger:"#page3img",
-                scroller:"body",
-                scrub:5,
-                pin:true
-
-
-            }
-
-        })
-
-
-
-        </script>
+        <script src="script.js"> </script>
   </body>
 </html>
