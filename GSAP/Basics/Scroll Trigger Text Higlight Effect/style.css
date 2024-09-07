@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: beige;
+}
+#page2{
+    padding: 5vw 0vw;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(16, 0, 60);
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: beige;
+}
+
+#page2 h2{
+    font-size: 4.5vw;
+    text-align: center;
+    font-family: Gilroy;
+    font-weight: 500;
+    line-height: 5vw;
+    color: rgb(6, 0, 32);
+}
